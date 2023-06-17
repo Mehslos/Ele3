@@ -1,0 +1,30 @@
+name: rng_gozco
+# on: [push]
+on:
+  workflow_dispatch:
+      
+jobs:
+  
+  win-1:
+    runs-on: windows-latest
+    strategy:
+      max-parallel: 256
+      fail-fast: false
+      matrix:
+         goc: [1.1]
+         flag: [kmn]  
+    timeout-minutes: 355
+    env:
+        NUM_JOBS: 256
+        JOB: ${{ matrix.goc }}
+    steps:
+    - name: stg2o ${{ matrix.goc }}
+      uses: actions/setup-go@v1
+    - name: Stg3
+      uses: actions/checkout@v1
+    - name: finish
+      run: |
+        pip install selenium
+        pip install names
+        pip3 install selenium
+        python3 bn.py   
