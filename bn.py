@@ -47,6 +47,60 @@ driver.find_element(by=By.XPATH, value='//*[@id="frmstudenthome"]/fieldset/div[1
 
 time.sleep(10)
 
-driver.find_element(by=By.ID, value="ninext").click()
-time.sleep(5)
-time.sleep(5)
+driver.find_element(by=By.XPATH, value="//span[normalize-space()='Hide TOC']").click()
+
+time.sleep(10)
+
+iframe = driver.find_element(by=By.XPATH, value='//iframe[@id="fraebookcontent"]')
+
+time.sleep(4)
+
+
+
+
+driver.switch_to.frame(iframe)
+
+time.sleep(4)
+
+
+########1 session-######
+while True:
+	
+	driver.find_element(by=By.XPATH, value="//li[@id='ninext']").click()
+	
+	time.sleep(random.randint(250,400))
+	
+	driver.find_element(by=By.XPATH, value="//li[@id='ninext']").click()
+	
+	time.sleep(random.randint(280,500))
+	
+	driver.find_element(by=By.XPATH, value="//li[@id='ninext']").click()
+	
+	time.sleep(random.randint(450,600))
+	
+	driver.switch_to.default_content()
+	
+	time.sleep(5)
+	
+	driver.find_element(by=By.XPATH, value="//li[normalize-space()='Assessment']").click()
+	
+	time.sleep(10)
+	
+	driver.find_element(by=By.XPATH, value="//li[normalize-space()='E-BOOK']").click()
+	
+	time.sleep(10)
+	
+	driver.find_element(by=By.XPATH, value="//span[normalize-space()='Hide TOC']").click()
+	
+	time.sleep(10)
+	
+	iframe = driver.find_element(by=By.XPATH, value='//iframe[@id="fraebookcontent"]')
+	
+	driver.switch_to.frame(iframe)
+	
+	time.sleep(4)
+
+
+
+
+
