@@ -47,6 +47,6 @@ driver.find_element(by=By.XPATH, value='//*[@id="frmstudenthome"]/fieldset/div[1
 
 time.sleep(10)
 
-driver.find_element(By.ID, value="ninext").click()
+driver.find_element(by=By.ID, value="ninext").click()
 time.sleep(5)
 time.sleep(5)
