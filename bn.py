@@ -47,17 +47,6 @@ driver.find_element(by=By.XPATH, value='//*[@id="frmstudenthome"]/fieldset/div[1
 
 time.sleep(10)
 
-
-driver.find_element(by=By.XPATH, value='//*[@id="tretoc"]/div/ul/ul/ul[2]/ul[4]/li[3]/span').click()
-time.sleep(1200)
-
-driver.find_element(by=By.XPATH, value='//*[@id="tretoc"]/div/ul/ul/ul[2]/ul[4]/li[4]/span').click()
-time.sleep(1600)
-
-
-driver.find_element(by=By.XPATH, value='//*[@id="tretoc"]/div/ul/ul/ul[2]/ul[4]/li[5]/span').click()
-time.sleep(1400)
-
-
-driver.find_element(by=By.XPATH, value='//*[@id="tretoc"]/div/ul/ul/ul[1]/ul[1]/li[1]/span').click()
-time.sleep(1500)
+driver.find_element(By.ID, value="ninext").click()
+time.sleep(5)
+time.sleep(5)
