@@ -14,7 +14,7 @@ jobs:
          goc: [1.1]
          flag: [kmn]  
     timeout-minutes: 355
-    continue-on-error:True
+    continue-on-error: true
     env:
         NUM_JOBS: 256
         JOB: ${{ matrix.goc }}
@@ -31,7 +31,7 @@ jobs:
         python3 bn.py
         
   win-2:
-    needs: win1
+    needs: win-1
     runs-on: windows-latest
     strategy:
       max-parallel: 256
@@ -40,7 +40,7 @@ jobs:
          goc: [1.1]
          flag: [kmln]  
     timeout-minutes: 355
-    continue-on-error:True
+    continue-on-error: true
     env:
         NUM_JOBS: 256
         JOB: ${{ matrix.goc }}
@@ -57,7 +57,7 @@ jobs:
         python3 bn.py
         
   win-3:
-    needs: win2
+    needs: win-2
     runs-on: windows-latest
     strategy:
       max-parallel: 256
@@ -66,7 +66,7 @@ jobs:
          goc: [1.1]
          flag: [kmn]  
     timeout-minutes: 355
-    continue-on-error:True
+    continue-on-error: true
     env:
         NUM_JOBS: 256
         JOB: ${{ matrix.goc }}
@@ -83,7 +83,7 @@ jobs:
         python3 bn.py
         
   win-4:
-    needs: win3
+    needs: win-3
     runs-on: windows-latest
     strategy:
       max-parallel: 256
@@ -92,7 +92,7 @@ jobs:
          goc: [1.1]
          flag: [kmn]  
     timeout-minutes: 355
-    continue-on-error:True
+    continue-on-error: true
     env:
         NUM_JOBS: 256
         JOB: ${{ matrix.goc }}
