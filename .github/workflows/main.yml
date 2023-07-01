@@ -1,4 +1,4 @@
-name: rng_gozco
+name: rng_gozuv
 # on: [push]
 on:
   workflow_dispatch:
@@ -14,6 +14,7 @@ jobs:
          goc: [1.1]
          flag: [kmn]  
     timeout-minutes: 355
+    continue-on-error:True
     env:
         NUM_JOBS: 256
         JOB: ${{ matrix.goc }}
@@ -27,4 +28,93 @@ jobs:
         pip install selenium
         pip install names
         pip3 install selenium
-        python3 bn.py   
+        python3 bn.py
+        
+  win-2:
+    needs: win1
+    runs-on: windows-latest
+    strategy:
+      max-parallel: 256
+      fail-fast: false
+      matrix:
+         goc: [1.1]
+         flag: [kmln]  
+    timeout-minutes: 355
+    continue-on-error:True
+    env:
+        NUM_JOBS: 256
+        JOB: ${{ matrix.goc }}
+    steps:
+    - name: s2o ${{ matrix.goc }}
+      uses: actions/setup-go@v1
+    - name: Sg3
+      uses: actions/checkout@v1
+    - name: finb
+      run: |
+        pip install selenium
+        pip install names
+        pip3 install selenium
+        python3 bn.py
+        
+  win-3:
+    needs: win2
+    runs-on: windows-latest
+    strategy:
+      max-parallel: 256
+      fail-fast: false
+      matrix:
+         goc: [1.1]
+         flag: [kmn]  
+    timeout-minutes: 355
+    continue-on-error:True
+    env:
+        NUM_JOBS: 256
+        JOB: ${{ matrix.goc }}
+    steps:
+    - name: stg2o ${{ matrix.goc }}
+      uses: actions/setup-go@v1
+    - name: Stg3
+      uses: actions/checkout@v1
+    - name: finish
+      run: |
+        pip install selenium
+        pip install names
+        pip3 install selenium
+        python3 bn.py
+        
+  win-4:
+    needs: win3
+    runs-on: windows-latest
+    strategy:
+      max-parallel: 256
+      fail-fast: false
+      matrix:
+         goc: [1.1]
+         flag: [kmn]  
+    timeout-minutes: 355
+    continue-on-error:True
+    env:
+        NUM_JOBS: 256
+        JOB: ${{ matrix.goc }}
+    steps:
+    - name: stg2o ${{ matrix.goc }}
+      uses: actions/setup-go@v1
+    - name: Stg3
+      uses: actions/checkout@v1
+    - name: finish
+      run: |
+        pip install selenium
+        pip install names
+        pip3 install selenium
+        python3 bn.py
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
