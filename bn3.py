@@ -43,7 +43,7 @@ driver.find_element(by=By.XPATH, value='//*[@id="loginform"]/button').click()
 time.sleep(10)
 
 
-driver.find_element(by=By.XPATH, value="//span[contains(text(),'Ship Construction and Stability (SCON) - Class 4 M')]").click()
+driver.find_element(by=By.XPATH, value='//*[@id="frmstudenthome"]/fieldset/div[6]/div/span[1]').click()
 
 time.sleep(10)
 
