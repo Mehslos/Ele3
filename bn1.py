@@ -68,11 +68,22 @@ while True:
 	
 	driver.find_element(by=By.XPATH, value="//li[@id='ninext']").click()
 	
-	time.sleep(random.randint(250,400))
+	time.sleep(random.randint(63,100))
 	
 	driver.find_element(by=By.XPATH, value="//li[@id='ninext']").click()
 	
-	time.sleep(random.randint(280,500))
+	time.sleep(random.randint(50,150))
+	
+	driver.find_element(by=By.XPATH, value="//li[@id='ninext']").click()
+	
+	time.sleep(random.randint(100,130))
+	driver.find_element(by=By.XPATH, value="//li[@id='ninext']").click()
+	
+	time.sleep(random.randint(59,75))
+	
+	driver.find_element(by=By.XPATH, value="//li[@id='ninext']").click()
+	
+	time.sleep(random.randint(88,130))
 	
 	driver.find_element(by=By.XPATH, value="//li[@id='ninext']").click()
 	
